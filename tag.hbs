@@ -1,0 +1,28 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- If we have a tag cover, display that - else blog cover - else nothing --}}
+<div class="mask"></div>
+<header class="page-header">
+    <div class="page-header-title">
+        <h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+        <p>{{@blog.description}}</p>
+    </div>
+</header>
+<div class="container">
+    <div class="container-main">
+{{#foreach posts}}
+<article class="post-block">
+    <header>
+        <h2><a href="{{url}}">{{title}}</a></h2>
+        <time datetime="{{date format="DD MMMM YYYY"}}">{{date format="DD MMMM YYYY"}}</time>
+    </header>
+    <section>
+        {{excerpt characters="130"}}
+    </section>
+    <footer></footer>
+</article>
+{{/foreach}}
+{{pagination}}
+    </div>
+</div>

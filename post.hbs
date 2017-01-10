@@ -1,0 +1,37 @@
+{{!< default}}
+{{#post}}
+<div class="mask"></div>
+<div class="container">
+    <div class="container-main">
+        <article class="post-page-main">
+            <header>
+                <h2>{{title}}</h2>
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY h:mm:ss a"}}</time>
+            </header>
+            <section class="post-page-content">
+                {{content}}
+            </section>
+            <footer>
+                <div class="post-page-tags">
+                    Tags:{{tags prefix=""}}
+                </div>
+                <div class="post-page-readmore">
+                    <div class="post-page-readmore-prev">
+                        <span>Next Post:&nbsp;&nbsp;</span>
+                    {{#next_post}}
+                        <a href="{{url}}">{{title}}</a>
+                    {{/next_post}}
+                    </div>
+                    <div class="post-page-readmore-next">
+                        <span>Prev Post:&nbsp;&nbsp;</span>
+                    {{#prev_post}}
+                        <a href="{{url}}">{{title}}</a>
+                    {{/prev_post}}
+                    </div>
+                </div>
+                {{> "comments"}}
+            </footer>
+        </article>
+    </div>
+</div>
+{{/post}}

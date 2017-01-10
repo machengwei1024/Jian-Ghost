@@ -1,0 +1,22 @@
+<nav class="page-nav">
+    <div class="page-nav-logo">
+        <img src="{{@blog.logo}}" alt="">
+    </div>
+    <div class="page-nav-bar">
+        <ul>
+        {{#foreach navigation}}
+        <li><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+        </ul>
+    </div>
+    <div class="page-nav-icon">
+        {{!-- 微博 --}}
+        <a href="" class="fa fa-weibo"></a>
+        {{!-- Github --}}
+        <a href="" class="fa fa-github"</a>
+        {{!-- 邮箱 --}}
+        <a href="" class="fa fa-envelope"></a>
+        {{!-- RSS --}}
+        <a href="{{@blog.url}}/rss" class="fa fa-rss"></a>
+    </div>
+</nav>

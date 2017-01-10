@@ -1,0 +1,13 @@
+{{!-- Previous/next page links - displayed on every page --}}
+{{!-- pagination --}}
+<nav class="page-pagination">
+{{#if prev}}
+    <a href="{{page_url prev}}" class="page-pagination-up page-pagination-text">← Newer Posts</a>
+{{/if}}
+    <span class="page-pagination-number">
+    	Page {{page}} of {{pages}}
+    </span>
+{{#if next}}
+    <a href="{{page_url next}}" class="page-pagination-down page-pagination-text">Older Posts →</a>
+{{/if}}
+</nav>
