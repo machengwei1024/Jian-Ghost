@@ -1,3 +1,7 @@
+[Chinese](https://weic96.cn/themes-jian/)
+[English](https://github.com/Weic96/Jian/blob/master/README-EN.md)
+
+
 Jian，遵循黑白调、简洁风、高性能、以纯写作为主而诞生的一款Ghost主题；
 
 计划写这种风格的主题已经好长时间了（其实也就一个多月），由于强迫症的原因，一直是写到百分之？的时候就删掉重写；
