@@ -8,7 +8,7 @@ Free to use, but can not change and modify the bottom of the copyright informati
 
 This theme also provides a charge version, in fact,fee version can be modified and remove the magic of the bottom of the page information and timely updates to receive e-mail notification;
 
-Charges only $8, please contact me if you want to buy, I will leave your site on this page；
+Charges only $8, please contact me if you want to buy, I will stay your site on this page；
 E-mail : i@weic96.cn
 
 ### Use
