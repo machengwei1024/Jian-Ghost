@@ -13,21 +13,21 @@
             </section>
             <footer>
                 <div class="post-page-tags">
-                    Tags:{{tags prefix=""}}
+                    标签：{{tags prefix=""}}
                 </div>
                 <div class="post-page-readmore">
+                {{#next_post}}
                     <div class="post-page-readmore-prev">
-                        <span>Next Post:&nbsp;&nbsp;</span>
-                    {{#next_post}}
+                        <span>下一篇:&nbsp;&nbsp;</span>
                         <a href="{{url}}">{{title}}</a>
-                    {{/next_post}}
                     </div>
+                {{/next_post}}
+                 {{#prev_post}}
                     <div class="post-page-readmore-next">
-                        <span>Prev Post:&nbsp;&nbsp;</span>
-                    {{#prev_post}}
+                        <span>下一篇:&nbsp;&nbsp;</span>
                         <a href="{{url}}">{{title}}</a>
-                    {{/prev_post}}
                     </div>
+                {{/prev_post}}
                 </div>
                 {{> "comments"}}
             </footer>
