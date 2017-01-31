@@ -13,13 +13,12 @@
     <meta name="HandheldFriendly" content="True" />
 {{!-- Brand icon --}}
     <link rel="shortcut icon" href="{{asset "images/favicon.ico"}}">
-{{!-- Styles'n'Scripts --}}    
+{{!-- Styles'n'Scripts --}}
 	<link rel="stylesheet" href="{{asset "css/font-awesome.min.css"}}">
     <link rel="stylesheet" href="{{asset "css/atom-one-light.css"}}">
 	<link rel="stylesheet" href="{{asset "css/waves.min.css"}}">
 	<link rel="stylesheet" href="{{asset "css/layout.css"}}">
-{{!-- Ghost outputs important style and meta data with this tag --}}
-{{ghost_head}}
+	<link rel="stylesheet" href="{{asset "css/zoom.css"}}">
 </head>
 <body class="{{body_class}}">
 <div id='pjax-load-container' >
@@ -41,22 +40,25 @@
     {{!-- The tiny footer at the very bottom --}}
     	<footer class="page-footer">
     	<p>Copyright © {{date format="YYYY"}} <a class="down-a" href="{{@blog.url}}">{{@blog.title}}</a></p>
-    	<p>Powered by <a class="down-a" target="_blank" href="https://ghost.org">Ghost</a>,Themes <a class="down-a" target="_blank" href="https://weic96.cn/themes-jian">Jian</a>.</p>
+    	<p>{{ghost_foot}} Powered by <a class="down-a" target="_blank" href="https://ghost.org">Ghost</a>,Themes <a class="down-a" target="_blank" href="https://weic96.cn/themes-jian">Jian</a>.</p>
     	</footer>
     </div>
     <span class="page-menu-btn waves-effect waves-button waves-float">
-            <i class="page-menu-btn-one"><img src="{{asset "images/line.png"}}" alt=""></i>
-            <i class="page-menu-btn-two"><img src="{{asset "images/line.png"}}" alt=""></i>
-            <i class="page-menu-btn-three"><img src="{{asset "images/line.png"}}" alt=""></i>
-        </span>
+			<i class="page-menu-btn-one"></i>
+			<i class="page-menu-btn-two"></i>
+			<i class="page-menu-btn-three"></i>
+    </span>
     <span class="page-retop-btn waves-effect waves-button waves-float"><i class="fa fa-angle-up"></i></span>
+    <span class="page-body-color-light"><i class="fa fa-sun-o"></i></span>
+        <span class="page-body-color-night"><i class="fa fa-moon-o"></i></span>
 </div>
-{{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
     <script src="{{asset "js/jquery-2.2.4.min.js"}}"></script>
     <script src="{{asset "js/jquery.pjax.js"}}"></script>
     <script src="{{asset "js/highlight.pack.js"}}"></script>
-    <script src="{{asset "js/waves.min.js"}}"></script>
+	<script src="{{asset "js/waves.min.js"}}"></script>
+	<script src="{{asset "js/transition.js"}}"></script>
     <script src="{{asset "js/main.js"}}"></script>
+	<script src="{{asset "js/zoom.min.js"}}"></script>
     <script type="text/javascript">
         window.onload = function(){
             $('#pjax-load-container').hide();
@@ -64,9 +66,9 @@
     </script>
     <script type="text/javascript">
         $(function(){
-            OtherF();
             hljs.initHighlightingOnLoad();
             Waves.displayEffect();
+			OtherF();
         })
     </script>
     <script type="text/javascript">
@@ -76,16 +78,15 @@
             });
             $(document).on('pjax:complete', function() {
                 $('#pjax-load-container').hide();
-                OtherF();
                 $('pre code').each(function(i, block) {
                     hljs.highlightBlock(block);
                 });
-                if ($('.ds-thread').length > 0) { 
-                    if (typeof DUOSHUO !== 'undefined') DUOSHUO.EmbedThread('.ds-thread'); 
-                    else $.getScript("http://ojebey8va.bkt.clouddn.com/embed.js?v=20170109"); 
+				OtherF();
+                if ($('.ds-thread').length > 0) {
+                    if (typeof DUOSHUO !== 'undefined') DUOSHUO.EmbedThread('.ds-thread');
+                    else $.getScript("http://ojebey8va.bkt.clouddn.com/embed.js?v=20170109");
                 }
-            }); 
+            });
     </script>
-    {{ghost_foot}}
 </body>
 </html>

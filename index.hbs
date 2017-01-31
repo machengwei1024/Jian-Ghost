@@ -2,12 +2,21 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 {{!-- The big featured header --}}
 <div class="mask"></div>
+{{#if @blog.cover}}
+<header class="page-header" style="background:url({{@blog.cover}});background-size:100%;background-repeat:no-repeat;">
+    <div class="page-header-title">
+        <h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+        <p>{{@blog.description}}</p>
+    </div>
+</header>
+{{else}}
 <header class="page-header">
     <div class="page-header-title">
         <h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
         <p>{{@blog.description}}</p>
     </div>
 </header>
+{{/if}}
 <div class="container">
     <div class="container-main">
 {{#foreach posts}}
@@ -17,7 +26,7 @@
         <time datetime="{{date format="DD MMMM YYYY"}}">{{date format="DD MMMM YYYY"}}</time>
     </header>
     <section>
-        {{excerpt characters="130"}}
+        {{content characters="130"}}
     </section>
     <footer></footer>
 </article>
