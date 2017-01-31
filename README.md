@@ -1,3 +1,5 @@
+[English](https://github.com/Weic96/Jian/edit/master/README-EN.md)
+
 Jian，遵循黑白调、简洁风、高性能、以纯写作为主而诞生的一款Ghost主题；
 
 #### 预览图
