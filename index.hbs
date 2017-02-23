@@ -5,15 +5,15 @@
 {{#if @blog.cover}}
 <header class="page-header" style="background:url({{@blog.cover}});background-size:100%;background-repeat:no-repeat;">
     <div class="page-header-title">
-        <h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
-        <p>{{@blog.description}}</p>
+        <h1 class="animated fadeIn"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+        <p class="animated2 fadeIn">{{@blog.description}}</p>
     </div>
 </header>
 {{else}}
 <header class="page-header">
     <div class="page-header-title">
-        <h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
-        <p>{{@blog.description}}</p>
+        <h1 class="animated fadeIn"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+        <p class="animated2 fadeIn">{{@blog.description}}</p>
     </div>
 </header>
 {{/if}}
@@ -21,11 +21,11 @@
     <div class="container-main">
 {{#foreach posts}}
 <article class="post-block">
-    <header>
+    <header class="animated2 fadeInDown">
         <h2><a href="{{url}}">{{title}}</a></h2>
         <time datetime="{{date format="DD MMMM YYYY"}}">{{date format="DD MMMM YYYY"}}</time>
     </header>
-    <section>
+    <section class="animated fadeInDown">
         {{content characters="130"}}
     </section>
     <footer></footer>
