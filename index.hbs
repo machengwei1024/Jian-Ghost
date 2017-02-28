@@ -3,7 +3,20 @@
 {{!-- The big featured header --}}
 <div class="mask"></div>
 {{#if @blog.cover}}
-<header class="page-header" style="background:url({{@blog.cover}});background-size:100%;background-repeat:no-repeat;">
+<style media="screen">
+    .page-header{
+        background:url({{@blog.cover}});
+        background-repeat:no-repeat;
+        background-size: 100% auto;
+        background-position:center;
+    }
+    @media screen and (max-width:960px){
+        .page-header{
+            background-size: 100% 100%;
+        }
+    }
+</style>
+<header class="page-header">
     <div class="page-header-title">
         <h1 class="animated fadeIn"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
         <p class="animated2 fadeIn">{{@blog.description}}</p>
