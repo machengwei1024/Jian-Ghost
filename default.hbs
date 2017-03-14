@@ -6,9 +6,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 	<meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta http-equiv="Expires" content="0">
 {{!-- Page Meta --}}
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
@@ -35,17 +32,8 @@
     </div>
 </div>
 <div id="pjax-container">
-    {{!-- The blog navigation links --}}
-    {{navigation}}
-    <div class="page-main">
-        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    	{{navigation}}
         {{{body}}}
-    {{!-- The tiny footer at the very bottom --}}
-    	<footer class="page-footer">
-    	<p>Copyright © {{date format="YYYY"}} <a class="down-a" href="{{@blog.url}}">{{@blog.title}}</a></p>
-    	<p>{{ghost_foot}} Powered by <a class="down-a" target="_blank" href="https://ghost.org">Ghost</a>,Themes <a class="down-a" target="_blank" href="https://weic96.cn/themes-jian">Jian</a>.</p>
-    	</footer>
-    </div>
     <span class="page-menu-btn waves-effect waves-button waves-float animated2 fadeIn">
 			<i class="page-menu-btn-one"></i>
 			<i class="page-menu-btn-two"></i>
@@ -85,10 +73,6 @@
                     hljs.highlightBlock(block);
                 });
 				OtherF();
-                if ($('.ds-thread').length > 0) {
-                    if (typeof DUOSHUO !== 'undefined') DUOSHUO.EmbedThread('.ds-thread');
-                    else $.getScript("http://ojebey8va.bkt.clouddn.com/embed.js?v=20170109");
-                }
             });
     </script>
 </body>

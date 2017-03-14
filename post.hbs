@@ -1,13 +1,83 @@
 {{!< default}}
+<div class="page-main">
 {{#post}}
 <div class="mask"></div>
+{{#if image}}
+<style>
+.post-page-header {
+	width: 100%;
+	min-height: 160px;
+	max-height: 40vh;
+	position: relative;
+	display: table;
+	width: 100%;
+	height: 100vh;
+	margin-bottom: 4rem;
+	text-align: center;
+	overflow: hidden;
+    background:url({{image}});
+    background-repeat:no-repeat;
+    background-size: 100% auto;
+    background-position:center;
+}
+.post-page-header-title {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.post-page-header-title>h1 {
+	font-size: 30pt;
+	font-weight: 300;
+	margin-bottom: 10px;
+    color: #fff;
+}
+
+.post-page-header-title>time {
+	font-size: 10pt;
+	font-weight: 200;
+	color: #fff;
+}
+@media screen and (max-width:960px){
+    .post-page-header{
+        background-size: 100% 100%;
+    }
+}
+</style>
+<header class="post-page-header animated fadeIn">
+    <div class="post-page-header-title">
+        <h1 class="animated fadeIn">{{title}}</h1>
+        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY h:mm:ss a"}}</time>
+    </div>
+</header>
+{{else}}
+<style media="screen">
+.post-page-header {
+	margin-bottom: 30px;
+    padding-top: 50px;
+	text-align: center
+}
+
+.post-page-header>h1 {
+	font-size: 28pt;
+	font-weight: 300;
+	margin-bottom: 10px
+}
+
+.post-page-header>time {
+	font-size: 10pt;
+	font-weight: 200;
+	color: #9eabb3
+}
+</style>
+<header class="post-page-header animated fadeInDown">
+    <h1 class="animated fadeIn">{{title}}</h1>
+    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY h:mm:ss a"}}</time>
+</header>
+{{/if}}
 <div class="container">
     <div class="container-main">
         <article class="post-page-main">
-            <header class="animated2 fadeInDown">
-                <h2>{{title}}</h2>
-                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY h:mm:ss a"}}</time>
-            </header>
             <section class="post-page-content animated fadeInDown">
                 {{content}}
             </section>
@@ -18,13 +88,13 @@
                 <div class="post-page-readmore">
                 {{#next_post}}
                     <div class="post-page-readmore-prev">
-                        <span>上一篇:&nbsp;&nbsp;</span>
+                        <span>下一篇:&nbsp;&nbsp;</span>
                         <a href="{{url}}">{{title}}</a>
                     </div>
                 {{/next_post}}
                  {{#prev_post}}
                     <div class="post-page-readmore-next">
-                        <span>下一篇:&nbsp;&nbsp;</span>
+                        <span>上一篇:&nbsp;&nbsp;</span>
                         <a href="{{url}}">{{title}}</a>
                     </div>
                 {{/prev_post}}
@@ -34,4 +104,35 @@
         </article>
     </div>
 </div>
+
 {{/post}}
+{{> "footer"}}
+</div>
+
+<div class="post-page-donate">
+    <span class="post-page-donate-btn"><i class="fa fa-angle-up"></i></span>
+    <div class="post-page-donate-box">
+        <p>如果我的文章对你有帮助，或许可以打赏一下呀！</p>
+        <div class="post-page-donate-box-main">
+            <div class="post-page-donate-alipay-box">
+				支付宝
+				<div class="post-page-donate-alipay">
+					<img src="/assets/images/alipay.jpg" alt="">
+	            </div>
+            </div>
+            <div class="post-page-donate-weixin-box">
+				微信
+				<div class="post-page-donate-weixin">
+					<img src="/assets/images/weixin.jpg" alt="">
+	            </div>
+            </div>
+            <div class="post-page-donate-other-box">
+				QQ
+				<div class="post-page-donate-other">
+					<img src="/assets/images/weixin.jpg" alt="">
+	            </div>
+            </div>
+			<div style="clear:left;"></div>
+        </div>
+    </div>
+</div>

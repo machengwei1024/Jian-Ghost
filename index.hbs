@@ -1,6 +1,7 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 {{!-- The big featured header --}}
+<div class="page-main">
 <div class="mask"></div>
 {{#if @blog.cover}}
 <style media="screen">
@@ -19,26 +20,26 @@
 <header class="page-header">
     <div class="page-header-title">
         <h1 class="animated fadeIn"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
-        <p class="animated2 fadeIn">{{@blog.description}}</p>
+        <p class="animated fadeIn">{{@blog.description}}</p>
     </div>
 </header>
 {{else}}
 <header class="page-header">
     <div class="page-header-title">
         <h1 class="animated fadeIn"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
-        <p class="animated2 fadeIn">{{@blog.description}}</p>
+        <p class="animated fadeIn">{{@blog.description}}</p>
     </div>
 </header>
 {{/if}}
 <div class="container">
     <div class="container-main">
 {{#foreach posts}}
-<article class="post-block">
-    <header class="animated2 fadeInDown">
+<article class="post-block animated fadeInDown">
+    <header>
         <h2><a href="{{url}}">{{title}}</a></h2>
         <time datetime="{{date format="DD MMMM YYYY"}}">{{date format="DD MMMM YYYY"}}</time>
     </header>
-    <section class="animated fadeInDown">
+    <section>
         {{content characters="130"}}
     </section>
     <footer></footer>
@@ -46,4 +47,8 @@
 {{/foreach}}
 {{pagination}}
     </div>
+</div>
+
+
+{{> "footer"}}
 </div>
