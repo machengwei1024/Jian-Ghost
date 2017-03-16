@@ -1,6 +1,10 @@
 {
   "name": "Jian",
+<<<<<<< HEAD
   "version": "2.4.1",
+=======
+  "version": "2.4",
+>>>>>>> parent of abe4db6... update V2.5
   "Github":"https://github.com/Weic96/Jian",
   "Url":"https://weic96.cn/themes-jian",
   "author": "Weic Ma",

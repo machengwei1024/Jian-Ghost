@@ -4,11 +4,11 @@
 <div class="mask"></div>
 <div class="container">
     <div class="container-main">
-        <article class="post-page-main animated fadeInDown">
-            <header>
+        <article class="post-page-main">
+            <header class="animated2 fadeInDown">
                 <h2>{{title}}</h2>
             </header>
-            <section class="tags-page-content">
+            <section class="tags-page-content animated fadeInDown">
                 {{! Tag Cloud }}
                 {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
                     {{#foreach tags}}
