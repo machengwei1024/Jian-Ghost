@@ -2,22 +2,44 @@
 <div class="page-main">
 {{#author}}
     <div class="mask"></div>
-<header class="page-header">
-    <div class="page-header-title">
-        <h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
-        <p>{{@blog.description}}</p>
-    </div>
-</header>
+    {{#if @blog.cover}}
+    <style media="screen">
+        .page-header{
+            background:url({{@blog.cover}});
+            background-repeat:no-repeat;
+            background-size: 100% auto;
+            background-position:center;
+        }
+        @media screen and (max-width:960px){
+            .page-header{
+                background-size: 100% 100%;
+            }
+        }
+    </style>
+    <header class="page-header">
+        <div class="page-header-title">
+            <h1 class="animated fadeIn"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+            <p class="animated fadeIn">{{@blog.description}}</p>
+        </div>
+    </header>
+    {{else}}
+    <header class="page-header">
+        <div class="page-header-title">
+            <h1 class="animated fadeIn"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+            <p class="animated fadeIn">{{@blog.description}}</p>
+        </div>
+    </header>
+    {{/if}}
 <div class="container">
     <div class="container-main">
 {{#foreach posts}}
-<article class="post-block">
+<article class="post-block animated fadeInDown">
     <header>
-        <h2 class="animated2 fadeInDown"><a href="{{url}}">{{title}}</a></h2>
+        <h2><a href="{{url}}">{{title}}</a></h2>
         <time datetime="{{date format="DD MMMM YYYY"}}">{{date format="DD MMMM YYYY"}}</time>
     </header>
-    <section class="animated fadeInDown">
-        {{excerpt characters="130"}}
+    <section>
+        {{content characters="130"}}
     </section>
     <footer></footer>
 </article>
