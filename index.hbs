@@ -3,19 +3,6 @@
 {{!-- The big featured header --}}
 <div class="page-main">
 <div class="mask"></div>
-{{#if @blog.cover}}
-<style media="screen">
-    .page-header{
-        background:url({{@blog.cover}});
-        background-repeat:no-repeat;
-        background-size: 100% auto;
-        background-position:center;
-    }
-    @media screen and (max-width:960px){
-        .page-header{
-            background-size: 100% 100%;
-        }
-    }
 </style>
 <header class="page-header">
     <div class="page-header-title">
